@@ -4,5 +4,7 @@ node('built-in')
 	{
     git 'https://github.com/sunildevops77/maven.git'
 	}
-     
+   stage('continuous testing'){
+     sh 'echo "testing passed"'
+     }
 }

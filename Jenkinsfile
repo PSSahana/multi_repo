@@ -1,5 +1,4 @@
 node('built-in') {
-    stages{
     stage('continous download'){
         git 'https://github.com/sunildevops77/maven.git'
     }
@@ -24,14 +23,7 @@ node('built-in') {
         }
     }
     }
-    }
-    post{
-        success{
-            emailext attachLog: true, body: 'Success', subject: 'Jenkins mail', to: 'kittu.sahana@gmail.com'
-        }
-        failure{
-            emailext attachLog: true, body: 'Failed', subject: 'Jenkins mail', to: 'kittu.sahana@gmail.com'
-        }
-    }
+   
+    
     
 }

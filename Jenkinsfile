@@ -8,7 +8,7 @@ node('built-in') {
     stage('continous deployment'){
         script{
             sshagent(['Jenkins']){
-                sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/multibranch/webapp/target/webapp.war ubuntu@172.31.30.105:/var/lib/tomcat9/webapps/qaenv.war'
+                sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/multibranch_master/webapp/target/webapp.war ubuntu@172.31.30.105:/var/lib/tomcat9/webapps/qaenv.war'
         }
     }
     } 
@@ -19,7 +19,7 @@ node('built-in') {
      stage('continous delivery '){
         script{
             sshagent(['Jenkins']){
-                sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/multibranch/webapp/target/webapp.war ubuntu@172.31.19.241:/var/lib/tomcat9/webapps/prodenv.war'
+                sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/multibranch_master/webapp/target/webapp.war ubuntu@172.31.19.241:/var/lib/tomcat9/webapps/prodenv.war'
         }
     }
     }
